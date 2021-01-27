@@ -8,10 +8,16 @@ module.exports = {
   },
   module: {
     rules: [
+      // Import CSS
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      }
+      },
+      // Import Image
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   }
 };
