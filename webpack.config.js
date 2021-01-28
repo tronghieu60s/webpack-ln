@@ -10,11 +10,14 @@ module.exports = {
   },
   devtool: "inline-source-map",
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: "Development",
     }),
   ],
+  devServer: {
+    contentBase: "./dist",
+  },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
